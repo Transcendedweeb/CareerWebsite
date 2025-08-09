@@ -1,0 +1,105 @@
+/* Pointer */
+@media (pointer: coarse) {
+  #networkCursor {
+    display: none;
+  }
+}
+
+#networkCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* So it doesn't block clicks */
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999; /* Or whatever is appropriate */
+}
+
+/* Front page + Header */
+@media (max-width: 1700px) {
+  .right-background {
+    display: none;
+  }
+
+  .front-page_title {
+    margin-right: 1rem;
+    bottom: -70vh;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1500px) {
+  .mask-container {
+    max-width: 600px;
+  }
+
+  .right-background {
+    width: 25rem;
+  }
+
+  .mask-container {
+    position: relative;
+    max-width: 400px;
+    margin: 1rem auto;
+    left: auto;
+    bottom: auto;
+  }
+
+  .front-page_title {
+    margin-right: 2rem;
+    bottom: -10rem;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .front-page_title {
+    bottom: 0;
+    font-size: 1rem;
+  }
+
+  .front-page_title h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .front-page_title h1 {
+      font-size: 1.5rem;
+    }
+}
+
+@media (max-height: 800px) {
+  .front-page_title {
+    bottom: 0;
+    font-size: 1rem;
+  }
+}
+
+@media (orientation: landscape) and  (max-width: 1000px) {
+  main{
+    display: flex;
+  }
+
+  .front-page_title {
+    bottom: -40vh;
+  }
+
+  .front-page_title h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (orientation: landscape) and  (max-height: 400px) {
+  .front-page_title {
+    bottom: -3vh;
+  }
+}
+
+@media (max-width: 125%) {
+  .front-page_title {
+    bottom: -3vh;
+  }
+}

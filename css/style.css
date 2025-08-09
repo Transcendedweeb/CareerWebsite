@@ -1,0 +1,183 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+/* Defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: white;
+  background: linear-gradient(135deg, #ffffff, #f1f9fc, #fff4fd);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.force-hidden {
+  overflow: hidden;
+}
+
+#networkCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+#background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Header */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(4px);
+  padding: 0.8rem;
+  position: relative;
+  z-index: 100;
+  background: linear-gradient(
+    -10deg, 
+    rgba(255, 255, 255, 0.5), 
+    rgba(255, 255, 255, 0.5), 
+    rgba(255, 255, 255, 0.5), 
+    rgba(255, 255, 255, 0.5), 
+    rgba(255, 255, 255, 0.5), 
+    rgba(212, 244, 255, 0.5), 
+    rgba(255, 218, 248, 0.5)
+  );
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  letter-spacing: 0.05em;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+  transition: color 0.25s ease, border-bottom 0.25s ease, letter-spacing 0.25s ease;
+  padding-bottom: 2px;
+}
+
+nav ul li a:hover {
+  color: #0077cc;
+  border-bottom: 2px solid #0077cc;
+  letter-spacing: 0.08em;
+}
+
+/* Front page */
+.mask-container {
+  position: fixed;
+  left: 0rem;
+  bottom: 0rem;
+  width: 100%;
+  max-width: 870px;
+  margin: 0 auto;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.color-image,
+.bw-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.color-image {
+  background-image: url("../images/board_final.png");
+  background-size: cover;
+  z-index: 3;
+
+  -webkit-mask-image: url("../images/masks/sprite-center.png");
+  mask-image: url("../images/masks/sprite-center.png");
+
+  -webkit-mask-size: 4600% 100%;
+  mask-size: 4600% 100%;
+
+  -webkit-mask-position: 0% 0%;
+  mask-position: 0% 0%;
+  animation-direction: normal;
+}
+
+.bw-image {
+  z-index: 2;
+}
+
+.mask-animation {
+  animation: addColor 1300ms steps(45) forwards;
+}
+
+.right-background {
+  position: fixed; 
+  right: 0rem;
+  bottom: 0rem;
+  width: 35rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.front-page_title {
+  position: relative;
+  font-family: "Orbitron", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+  z-index: 10;
+  text-align: right;
+  bottom: -29rem;
+  margin-right: 15rem;
+  color: black;
+}
+
+@keyframes addColor {
+  from {
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+  }
+  to {
+    -webkit-mask-position: 100% 0%;
+    mask-position: 100% 0%;
+  }
+}

@@ -3,6 +3,18 @@ const bwImage = document.querySelector(".bw-image");
 
 const imageSets = [
   {
+    bw: "images/boat_start.png",
+    color: "images/boat_final.png",
+  },
+  {
+    bw: "images/copter_start.png",
+    color: "images/copter_final.png",
+  },
+  {
+    bw: "images/artorius_start.png",
+    color: "images/artorius_final.png",
+  },
+  {
     bw: "images/board_start.png",
     color: "images/board_final.png",
   },
@@ -12,6 +24,9 @@ const imageSets = [
   },
 ];
 
+const waitTime4 = 1000;
+const waitTimeColorFrame = 10000;
+const waitTimeNextAnimation = 500;
 let currentIndex = 0;
 
 // Helpers
@@ -26,7 +41,7 @@ function updateColorImage(index) {
 
 function startAnimation(forward = true, onComplete = null) {
   maskedImage.classList.remove("mask-animation");
-  void maskedImage.offsetWidth; // force reflow
+  void maskedImage.offsetWidth;
 
   maskedImage.style.animationDirection = forward ? "normal" : "reverse";
   maskedImage.classList.add("mask-animation");
@@ -40,42 +55,33 @@ function startAnimation(forward = true, onComplete = null) {
   maskedImage.addEventListener("animationend", handler);
 }
 
-// One complete animation cycle
 function runAnimationCycle() {
-  // Step 1: Update BW image only
   currentIndex = (currentIndex + 1) % imageSets.length;
   updateBWImage(currentIndex);
   bwImage.style.opacity = "1";
 
-  // Step 2: Reverse animation
   startAnimation(false, () => {
-    // Step 3: Wait 4s
     setTimeout(() => {
-      // Step 4: Update color image
       updateColorImage(currentIndex);
 
-      // Step 5: Forward animation
       startAnimation(true, () => {
-        // Step 6: Wait 5s, then repeat cycle
         setTimeout(() => {
           runAnimationCycle();
-        }, 5000);
+        }, waitTimeColorFrame);
       });
-    }, 4000); // wait after reverse
+    }, waitTime4);
   });
 }
 
-// Initial setup + first animation only
 window.addEventListener("load", () => {
   updateBWImage(currentIndex);
   updateColorImage(currentIndex);
 
   setTimeout(() => {
-    // First forward animation
     startAnimation(true, () => {
       setTimeout(() => {
-        runAnimationCycle(); // start the loop AFTER first forward is done
-      }, 5000);
+        runAnimationCycle();
+      }, waitTimeColorFrame);
     });
-  }, 2000);
+  }, waitTimeNextAnimation);
 });
