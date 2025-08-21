@@ -9,10 +9,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none; /* So it doesn't block clicks */
+  pointer-events: none;
   width: 100vw;
   height: 100vh;
-  z-index: 9999; /* Or whatever is appropriate */
+  z-index: 9999;
 }
 
 /* Front page + Header */
@@ -52,6 +52,11 @@
     text-align: center;
     padding: 0 1rem;
   }
+
+  .image-wrapper .split-btn {
+    bottom: 1rem;
+    right: .1rem;
+  }
 }
 
 @media (max-width: 720px) {
@@ -90,11 +95,29 @@
   .front-page_title h1 {
     font-size: 2rem;
   }
+
+  .image-wrapper .split-btn {
+    bottom: 2.5rem;
+  }
 }
 
 @media (orientation: landscape) and  (max-height: 400px) {
   .front-page_title {
     bottom: -3vh;
+  }
+}
+
+@media (orientation: landscape) and  (max-height: 500px) {
+  .image-wrapper .split-btn {
+    bottom: 9rem;
+    right: .1rem;
+  }
+}
+
+@media (orientation: landscape) and  (max-height: 400px) {
+  .image-wrapper .split-btn {
+    bottom: 8rem;
+    right: .1rem;
   }
 }
 
