@@ -3,24 +3,24 @@ const bwImage = document.querySelector(".bw-image");
 
 const imageSets = [
   {
-    bw: "images/front-page/boat_start.png",
-    color: "images/front-page/boat_final.png",
+    bw: "src/front-page/boat_start.png",
+    color: "src/front-page/boat_final.png",
   },
   {
-    bw: "images/front-page/copter_start.png",
-    color: "images/front-page/copter_final.png",
+    bw: "src/front-page/copter_start.png",
+    color: "src/front-page/copter_final.png",
   },
   {
-    bw: "images/front-page/artorius_start.png",
-    color: "images/front-page/artorius_final.png",
+    bw: "src/front-page/artorius_start.png",
+    color: "src/front-page/artorius_final.png",
   },
   {
-    bw: "images/front-page/board_start.png",
-    color: "images/front-page/board_final.png",
+    bw: "src/front-page/board_start.png",
+    color: "src/front-page/board_final.png",
   },
   {
-    bw: "images/front-page/scoop_start.png",
-    color: "images/front-page/scoop_final.png",
+    bw: "src/front-page/scoop_start.png",
+    color: "src/front-page/scoop_final.png",
   },
 ];
 

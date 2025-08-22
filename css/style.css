@@ -127,12 +127,12 @@ nav ul li a:hover {
 }
 
 .color-image {
-  background-image: url("../images/front-page/boat_final.png");
+  background-image: url("../src/front-page/boat_final.png");
   background-size: cover;
   z-index: 3;
 
-  -webkit-mask-image: url("../images/masks/sprite-center.png");
-  mask-image: url("../images/masks/sprite-center.png");
+  -webkit-mask-image: url("../src/masks/sprite-center.png");
+  mask-image: url("../src/masks/sprite-center.png");
 
   -webkit-mask-size: 4600% 100%;
   mask-size: 4600% 100%;
@@ -260,7 +260,7 @@ nav ul li a:hover {
 }
 
 .card:nth-child(1) {
-  background-image: url('../images/portfolio_cards/card-background_nolai.png');
+  background-image: url('../src/portfolio_cards/card-background_nolai.png');
 }
 
 .card:nth-child(1)::before, 
@@ -271,7 +271,7 @@ nav ul li a:hover {
 }
 
 .card:nth-child(2) {
-  background-image: url('../images/portfolio_cards/card-background_dsu.png');
+  background-image: url('../src/portfolio_cards/card-background_dsu.png');
 }
 
 .card:nth-child(2)::before {
@@ -279,11 +279,11 @@ nav ul li a:hover {
 }
 
 .card:nth-child(3) {
-  background-image: url('../images/portfolio_cards/card-background_ntr.png');
+  background-image: url('../src/portfolio_cards/card-background_ntr.png');
 }
 
 .card:nth-child(4) {
-  background-image: url('../images/portfolio_cards/card-background_dsp.png');
+  background-image: url('../src/portfolio_cards/card-background_dsp.png');
 }
 
 .card:nth-child(4)::before {
@@ -291,15 +291,15 @@ nav ul li a:hover {
 }
 
 .card:nth-child(5) {
-  background-image: url('../images/portfolio_cards/card-background_scoop.png');
+  background-image: url('../src/portfolio_cards/card-background_scoop.png');
 }
 
 .card:nth-child(6) {
-  background-image: url('../images/portfolio_cards/card-background_rekt.png');
+  background-image: url('../src/portfolio_cards/card-background_rekt.png');
 }
 
 .card:nth-child(7) {
-  background-image: url('../images/portfolio_cards/card-background_violet.png');
+  background-image: url('../src/portfolio_cards/card-background_violet.png');
 }
 
 .card:nth-child(7)::before {
