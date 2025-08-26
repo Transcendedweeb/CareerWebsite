@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="js/cursor_effect.js" defer></script>
+  <script src="js/background_effect.js" defer></script>
+  <script src="js/image_track_slider.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="portfolio_menu.html">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <canvas id="networkCursor"></canvas>
+  <canvas id="background-canvas"></canvas>
+
+  <main>
+    <!-- Banner -->
+    <section class="banner">
+      <img src="src/banners/banner_nolai.png" alt="Project Banner">
+      <div class="banner-title-box">
+        <h1>Nolai Dashboard</h1>
+      </div>
+    </section>
+
+    <!-- Meta Information -->
+    <section class="meta fade-in-text">
+      <div class="meta-grid">
+        <p><span class="label">Stakeholders:</span> Jane Doe, Team Alpha</p>
+        <p><span class="label">Date Finished:</span> August 2025</p>
+        <p><span class="label">Languages:</span> JavaScript, Python, HTML/CSS</p>
+        <p><span class="label">GitHub:</span> 
+          <a href="https://github.com/myproject" target="_blank">View Repo</a></p>
+      </div>
+    </section>
+
+    <!-- Project Explanation -->
+    <section class="content fade-in-text">
+      <h2>Overview</h2>
+      <p>
+        The Nolai Dashboard was built to centralize team operations, streamline
+        workflows, and provide clear insights. It integrates real-time analytics,
+        automated reporting, and collaboration tools in one platform.
+      </p>
+
+      <h2>Features</h2>
+      <p>
+        - Dynamic charting and visualization tools.<br>
+        - API integrations with external services.<br>
+        - Responsive and accessible design for all devices.<br>
+        - User role management and permissions.
+      </p>
+
+      <h2>Challenges & Learnings</h2>
+      <p>
+        The main challenge was balancing performance with scalability. Optimizing
+        data-heavy components taught us efficient state management and API
+        caching strategies.
+      </p>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="gallery">
+      <h2>Gallery</h2>
+      <div id="image-track" data-mouse-down-at="0">
+        <img src="src/gallery/nolai/homescreen.png" alt="Screenshot 1" draggable="false" class="gallery-image">
+        <img src="src/gallery/nolai/playback.png" alt="Screenshot 2" draggable="false" class="gallery-image">
+        <img src="src/gallery/nolai/select_session.png" alt="Screenshot 3" draggable="false" class="gallery-image">
+        <img src="src/gallery/nolai/select_student.png" alt="Screenshot 4" draggable="false" class="gallery-image">
+        <img src="src/gallery/nolai/stream.png" alt="Screenshot 5" draggable="false" class="gallery-image">
+        <img src="src/gallery/nolai/uploading_files.png" alt="Screenshot 6" draggable="false" class="gallery-image">
+      </div>
+    </section>
+
+    <!-- Fullscreen overlay for clicked image -->
+    <div id="fullscreen-overlay" class="hidden">
+      <img id="fullscreen-image" src="" alt="Fullscreen Image">
+      <span id="close-fullscreen">&times;</span>
+    </div>
+  </main>
+
+</body>
+</html>
