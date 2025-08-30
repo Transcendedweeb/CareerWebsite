@@ -29,22 +29,21 @@
 
     <!-- Banner -->
     <section class="banner">
-      <img src="src/banners/banner_nolai.png" alt="Project Banner">
+      <img src="src/banners/banner_dp.png" alt="Project Banner">
       <div class="banner-title-box">
-        <h1>Nolai Dashboard</h1>
+        <h1>Dobbelspel Python</h1>
       </div>
     </section>
 
     <!-- Meta Information -->
     <section class="meta fade-in-text">
       <div class="meta-grid">
-        <p><span class="label">Stakeholders:</span>
-          <a href="https://vrlearninglab.nl" target="_blank">Virtual Reality Learning Lab,</a> 
-          <a href="https://www.ru.nl/nolai" target="_blank">Nationaal Onderwijslab AI</a> 
+        <p><span class="label">Stakeholders:</span>Personal project</p>
+        <p><span class="label">Date Finished:</span>December 2023</p>
+        <p><span class="label">Languages:</span>Python</p>
+        <p><span class="label">GitHub:</span>
+          <a href="https://github.com/Transcendedweeb/Dobbelspel-Minigame-Expirimental" target="_blank">Dobbelspel Python expirimental repo</a> 
         </p>
-        <p><span class="label">Date Finished:</span> July 2025</p>
-        <p><span class="label">Languages:</span> Laravel, PHP, HTML/CSS/JS, Unity/C#, Python</p>
-        <p><span class="label">GitHub:</span>Not avaible</p>
       </div>
     </section>
 
@@ -52,34 +51,21 @@
     <section class="content fade-in-text">
       <h2>Overview</h2>
       <p>
-        As part of the NOLAI project “Woordenschat vergroten door rijke context”, I developed an interactive dashboard that supports researchers in guiding and analyzing 
-        Virtual Reality (VR) sessions with young children. The broader project explores how VR and AI can help reduce language gaps in preschoolers by placing them in rich, 
-        immersive learning environments.
-        <br>
-        My contribution focused on solving a major limitation: researchers had little control or visibility during VR sessions. To address this, I designed and built a 
-        proof-of-concept dashboard that enables real-time monitoring, recording, and interaction — while ensuring data privacy and usability. The tool is intended as a 
-        stepping stone toward scalable, safe, and effective VR-based language education in primary schools.
+        The Python version of Dobbelspel marks the very first step in transforming a simple family board game into an interactive digital-physical hybrid. Using Python, 
+        the game connects a physical board—where dice rolls and player movement take place—with a PC interface that launches engaging minigames. These include 
+        a rock-paper-scissors duel, a rhythm-based challenge inspired by osu!, and a quiz module. While visually simpler than its Unity successor, this version established 
+        the entire framework for integrating physical input with digital play, making it the foundation of a long-term evolving project.
       </p>
 
       <h2>Features</h2>
       <p>
-        - Live Monitoring: Watch VR sessions through a live video stream from the headset.<br>
-        - Session Control: Start, manage, and end VR activities remotely.<br>
-        - Notes & Annotations: Make time-linked observations directly within the dashboard.<br>
-        - Recording & Playback: Capture and review audio, video, and in-game interactions for later analysis.<br>
-        - Secure Data Management: Local storage of all session data, compliant with privacy and safety standards (ISO 9241-210).<br>
-        - Scalable Architecture: Built with Unity (VR side) and Laravel + MariaDB (dashboard side), designed for future AI integration such as speech recognition and 
-        automated analysis.<br>
-      </p>
-
-      <h2>Challenges & Learnings</h2>
-      <p>
-        Developing the dashboard brought both technical and design challenges. The tight project timeline required me to rapidly prototype and validate features through 
-        usability testing with real stakeholders. Balancing usability and data security was critical, especially since the system involves young children.
-        <br>
-        I learned to apply design thinking and the ISO 9241-210 human-centered design standard in practice, iterating based on continuous researcher feedback. On the 
-        technical side, I deepened my skills in Unity development, Laravel backend engineering, and database design with MariaDB. Perhaps the most valuable lesson was 
-        how to translate complex user needs into a simple, reliable, and future-proof tool that bridges educational research and technology.
+        - Arduino/Python Communication: Handles serial input from the physical gameboard to synchronize dice rolls and piece movements with the PC display.<br>
+        - A best of 3 Rock-Paper-Scissors game between players.<br>
+        - Osu-Inspired Challenge: Timing-based input mini-game<br>
+        - Quiz Mode: Question and answer challenges.<br>
+        - Uses Python scripts and libraries like pygame to render interfaces, manage turns, and trigger events.<br>
+        - While lightweight compared to later versions, the architecture of this Python project laid the groundwork for the more polished Unity build by proving the 
+        feasibility of combining physical Arduino hardware with digital minigame logic.<br>
       </p>
     </section>
 
@@ -118,12 +104,13 @@
       </div>
 
       <div id="image-track" data-mouse-down-at="0">
-        <img src="src/gallery/nolai/homescreen.png" alt="Screenshot 1" draggable="false" class="gallery-image">
-        <img src="src/gallery/nolai/playback.png" alt="Screenshot 2" draggable="false" class="gallery-image">
-        <img src="src/gallery/nolai/select_session.png" alt="Screenshot 3" draggable="false" class="gallery-image">
-        <img src="src/gallery/nolai/select_student.png" alt="Screenshot 4" draggable="false" class="gallery-image">
-        <img src="src/gallery/nolai/stream.png" alt="Screenshot 5" draggable="false" class="gallery-image">
-        <img src="src/gallery/nolai/uploading_files.png" alt="Screenshot 6" draggable="false" class="gallery-image">
+        <img src="src/gallery/dp/board.png" alt="Screenshot 1" draggable="false" class="gallery-image">
+        <img src="src/gallery/dp/boss_2.png" alt="Screenshot 2" draggable="false" class="gallery-image">
+        <img src="src/gallery/dp/arena_bg.png" alt="Screenshot 3" draggable="false" class="gallery-image">
+        <img src="src/gallery/dp/boss_1.png" alt="Screenshot 4" draggable="false" class="gallery-image">
+        <img src="src/gallery/dp/bossLairBg.png" alt="Screenshot 5" draggable="false" class="gallery-image">
+        <img src="src/gallery/dp/failed.png" alt="Screenshot 6" draggable="false" class="gallery-image">
+        <img src="src/gallery/dp/dealer.png" alt="Screenshot 7" draggable="false" class="gallery-image">
       </div>
     </section>
 

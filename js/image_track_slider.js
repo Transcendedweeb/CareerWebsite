@@ -1,3 +1,5 @@
+// --- DRAG / GALLERY LOGIC ---
+
 const track = document.getElementById("image-track");
 const gallery = document.querySelector(".gallery");
 const images = track.querySelectorAll("img");
@@ -8,6 +10,7 @@ let startX = 0;
 let prevTranslate = 0;
 let currentTranslate = 0;
 let displayedTranslate = 0;
+let tapStartTime = 0;
 let animationFrameId = null;
 let dragged = false;
 let downTarget = null;
@@ -53,31 +56,50 @@ function scheduleAnimation() {
 
 updateParallax();
 
-track.addEventListener("pointerdown", (e) => {
-  isDown = true;
-  startX = e.clientX;
-  dragged = false;
-  downTarget = e.target;
-  scheduleAnimation();
-});
+// --- IMPORTANT FIXES FOR MOBILE ---
+track.style.touchAction = "none"; // keeps drag smooth
+
+// remove the blanket preventDefault on all images
+// images.forEach(img => {
+//   img.addEventListener("pointerdown", e => e.preventDefault(), { passive: false });
+// });
 
 window.addEventListener("pointermove", (e) => {
   if (!isDown) return;
   const delta = e.clientX - startX;
 
-  if (Math.abs(delta) > 5) dragged = true;
+  if (Math.abs(delta) > 5) {
+    dragged = true;
+    e.preventDefault(); // stop native image behaviors ONLY when dragging
+  }
 
   const { minTranslate, maxTranslate } = getClampBounds();
   currentTranslate = clamp(prevTranslate + delta, minTranslate, maxTranslate);
   scheduleAnimation();
 });
 
+
+track.addEventListener("pointerdown", (e) => {
+  isDown = true;
+  startX = e.clientX;
+  dragged = false;
+  downTarget = e.target;
+  tapStartTime = Date.now();
+  scheduleAnimation();
+});
+
+
 window.addEventListener("pointerup", (e) => {
   if (!isDown) return;
   isDown = false;
   prevTranslate = currentTranslate;
 
-  if (!dragged && downTarget && downTarget.tagName === "IMG" && e.target === downTarget) {
+  const tapDuration = Date.now() - tapStartTime;
+
+  // treat as a tap if quick (<250ms) and not dragged
+  const isTap = !dragged && tapDuration < 250;
+
+  if (isTap && downTarget && downTarget.tagName === "IMG" && e.target === downTarget) {
     openFullscreen(downTarget);
   }
 

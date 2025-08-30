@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover/>
+  <title></title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="js/cursor_effect.js" defer></script>
+  <script src="js/background_effect.js" defer></script>
+  <script src="js/image_track_slider.js" defer></script>
+  <script src="js/switching_message.js" defer></script>
+  <script src="js/to_top_button.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="portfolio_menu.html">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <canvas id="networkCursor"></canvas>
+  <canvas id="background-canvas"></canvas>
+
+    <!-- Banner -->
+    <section class="banner">
+      <img src="src/banners/banner_het_water_komt.png" alt="Project Banner">
+      <div class="banner-title-box">
+        <h1>Het Water Komt - VR</h1>
+      </div>
+    </section>
+
+    <!-- Meta Information -->
+    <section class="meta fade-in-text">
+      <div class="meta-grid">
+        <p><span class="label">Stakeholders:</span>
+          <a href="https://ntr.nl" target="_blank">NTR</a> 
+        </p>
+        <p><span class="label">Date Finished:</span>April 2024</p>
+        <p><span class="label">Languages:</span>Unity/C#</p>
+        <p><span class="label">GitHub:</span>
+          <a href="https://github.com/Transcendedweeb/NTR_VR-Podwalks" target="_blank">Het Water Komt repo</a> 
+        </p>
+      </div>
+    </section>
+
+    <!-- Project Explanation -->
+    <section class="content fade-in-text">
+      <h2>Overview</h2>
+      <p>
+        The NTR VR Podwalks project was developed in collaboration with the Dutch public broadcaster NTR to bring their well-known Podwalk experiences into Virtual Reality. 
+        Traditionally, a Podwalk combines podcasts and location-based storytelling: listeners follow a walking route outdoors while listening to narratives tied to specific places.
+        <br>
+        With this project, we created a VR application prototype that allows users to experience these Podwalks from home, using a Meta Quest 2 headset. By combining 360° video, 
+        immersive audio, interactive overlays, and environmental effects, the application recreates the feeling of walking the route — without requiring physical presence or 
+        favorable weather conditions. This makes the Podwalk experience more accessible to people with physical limitations and allows anyone to enjoy the stories regardless of 
+        location.
+      </p>
+
+      <h2>Features</h2>
+      <p>
+        - 360° Podwalk Video Integration: The VR experience is built around high-resolution 360° video recordings of the Podwalk routes, projected onto a skybox for full 
+        immersion. <br>
+        - Interactive Points of Interest: At specific locations, the video pauses and provides overlays with historical photos, background information, or additional 
+        narrative context. Users can choose whether to interact or continue walking.<br>
+        - Immersive Environmental Effects: To enhance realism, effects such as rain, mist, and water simulations were integrated into the environment, connecting the 
+        story with the atmosphere.<br>
+        - Contextual Overlays & Archival Media: Archival photos of events (such as floods) were aligned with real-world locations and superimposed on the video, showing the 
+        contrast between past and present.<br>
+        - Smooth Transitions & Panoramas: For deeper storytelling, transitions between 360° video and modified panorama images (e.g., with adjusted water levels) were added, 
+        maintaining immersion without breaking perspective.<br>
+      </p>
+
+      <h2>Challenges & Learnings</h2>
+      <p>
+        One of the main challenges we faced was working with the original 5K 360° video recordings. These files were extremely large (over 3GB) and could not be streamed without 
+        significant quality loss. To overcome this, we integrated the video files offline into the application. This solution preserved resolution and framerate but required 
+        careful optimization to avoid performance issues on the Meta Quest 2.
+        <br>
+        Another difficulty came from the hardware limitations of the VR headset itself. Since the project was developed exclusively for the Meta Quest 2, we had to ensure that 
+        the application ran smoothly within its technical constraints. This meant paying close attention to memory usage, frame stability, and post-processing effects. In the 
+        process, we learned how to balance visual fidelity with system performance to maintain immersion without overwhelming the hardware.
+        <br>
+        We also discovered the delicate balance between immersion and usability. For example, raycast pointers made interaction easier but visually disrupted the experience. Our 
+        solution was to let users decide when to enable or disable them.
+        <br>
+        Finally, accessibility remained a key consideration throughout the project. Since the core goal was to make Podwalks available to people who cannot physically walk the routes, 
+        we had to design interactions that were simple, comfortable, and intuitive for a wide audience. Working in short SCRUM sprints allowed us to test early, gather feedback, and 
+        adapt quickly. This iterative approach helped us deliver a functional prototype while also giving us valuable experience in professional project workflows.
+      </p>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="gallery">
+      <h2>Gallery</h2>
+
+      <div class="gallery-hint">
+        <div class="hint drag-hint active">
+          <!-- Drag icon (hand + arrows) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="hint-icon">
+            <rect width="256" height="256" fill="none"/>
+            <path d="M64,216,34.68,166a20,20,0,0,1,34.64-20L88,176V68a20,20,0,0,1,40,0v56a20,20,0,0,1,40,0v16a20,20,0,0,1,40,0v36c0,24-8,40-8,40"
+              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+            <polyline points="216 24 248 56 216 88"
+              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+            <line x1="176" y1="56" x2="248" y2="56"
+              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+          </svg>
+          <span>Drag</span>
+        </div>
+
+        <div class="hint tap-hint">
+          <!-- Tap icon (finger press) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="hint-icon">
+            <rect width="256" height="256" fill="none"/>
+            <line x1="96" y1="16" x2="96" y2="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+            <line x1="16" y1="96" x2="24" y2="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+            <line x1="128" y1="32" x2="136" y2="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+            <line x1="32" y1="128" x2="16" y2="136" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+            <path d="M162.35,138.35a8,8,0,0,1,2.46-13l46.41-17.82a8,8,0,0,0-.71-14.85L50.44,40.41a8,8,0,0,0-10,10L92.68,210.51a8,8,0,0,0,14.85.71l17.82-46.41a8,8,0,0,1,13-2.46l51.31,51.31a8,8,0,0,0,11.31,0L213.66,201a8,8,0,0,0,0-11.31Z"
+              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+          </svg>
+          <span>Tap</span>
+        </div>
+      </div>
+
+      <div id="image-track" data-mouse-down-at="0">
+        <img src="src/gallery/Het Water Komt/overlay.png" alt="Screenshot 1" draggable="false" class="gallery-image">
+        <img src="src/gallery/Het Water Komt/pathway.png" alt="Screenshot 2" draggable="false" class="gallery-image">
+        <img src="src/gallery/Het Water Komt/start.png" alt="Screenshot 3" draggable="false" class="gallery-image">
+        <img src="src/gallery/Het Water Komt/text_panel.png" alt="Screenshot 4" draggable="false" class="gallery-image">
+        <img src="src/gallery/Het Water Komt/transition.png" alt="Screenshot 5" draggable="false" class="gallery-image">
+        <img src="src/gallery/Het Water Komt/waterlevel.png" alt="Screenshot 6" draggable="false" class="gallery-image">
+      </div>
+    </section>
+
+    <!-- Fullscreen overlay for clicked image -->
+    <div id="fullscreen-overlay" class="hidden">
+      <img id="fullscreen-image" src="" alt="Fullscreen Image">
+      <span id="close-fullscreen">&times;</span>
+    </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="toTopBtn" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        class="feather feather-arrow-up">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+</body>
+</html>
