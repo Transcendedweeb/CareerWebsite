@@ -145,6 +145,11 @@ nav ul li a:hover {
   animation-direction: normal;
 }
 
+.color-image.firefox-fallback {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
 .bw-image {
   z-index: 2;
 }

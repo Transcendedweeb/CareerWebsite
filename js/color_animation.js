@@ -1,5 +1,6 @@
 const maskedImage = document.querySelector(".color-image");
 const bwImage = document.querySelector(".bw-image");
+const isFirefox = typeof InstallTrigger !== "undefined";
 
 const imageSets = [
   {
@@ -77,11 +78,18 @@ window.addEventListener("load", () => {
   updateBWImage(currentIndex);
   updateColorImage(currentIndex);
 
-  setTimeout(() => {
-    startAnimation(true, () => {
-      setTimeout(() => {
-        runAnimationCycle();
-      }, waitTimeColorFrame);
-    });
-  }, waitTimeNextAnimation);
+  if (isFirefox) {
+    // Firefox fallback: remove mask and show full color
+    maskedImage.classList.add("firefox-fallback");
+    bwImage.style.opacity = "0";
+  } else {
+    // Normal flow with animation
+    setTimeout(() => {
+      startAnimation(true, () => {
+        setTimeout(() => {
+          runAnimationCycle();
+        }, waitTimeColorFrame);
+      });
+    }, waitTimeNextAnimation);
+  }
 });

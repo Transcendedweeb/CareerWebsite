@@ -47,9 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  ctx.fillStyle = '#ffffffff'; 
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
   const sprite = new Image();
   sprite.src = 'src/masks/sprite-center.png';
   const totalFrames = 46;
@@ -57,8 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const frameHeight = 870;
   let currentFrame = 0;
 
-  const spriteSpeed = 20;
+  const spriteSpeed = 20; // Higher = slower, lower = faster
   let lastTime = 0;
+
+  const isFirefox = typeof InstallTrigger !== "undefined";
 
   function animateSprite(timestamp) {
     if (!lastTime) lastTime = timestamp;
@@ -86,13 +85,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   sprite.onload = () => {
-    requestAnimationFrame(animateSprite);
+    if (isFirefox) {
+      // Firefox fallback: skip masking animation entirely
+      canvas.style.display = 'none';
+      document.body.classList.remove('force-hidden');
+    } else {
+      // Normal animation for other browsers
+      ctx.fillStyle = '#ffffffff'; 
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      requestAnimationFrame(animateSprite);
+    }
   };
 
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    ctx.fillStyle = '#000'; 
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    if (!isFirefox) {
+      ctx.fillStyle = '#000'; 
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
   });
 });
