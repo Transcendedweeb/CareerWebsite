@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="js/cursor_effect.js" defer></script>
+  <script src="js/background_effect.js" defer></script>
+  <script src="js/3d_slider.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio_menu.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <canvas id="networkCursor"></canvas>
+  <canvas id="background-canvas"></canvas>
+
+
+
+  <section class="scroll-banner">
+    <div class="drag-hint">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="hint-icon">
+        <rect width="256" height="256" fill="none"/>
+        <path d="M64,216,34.68,166a20,20,0,0,1,34.64-20L88,176V68a20,20,0,0,1,40,0v56a20,20,0,0,1,40,0v16a20,20,0,0,1,40,0v36c0,24-8,40-8,40"
+          fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+        <polyline points="216 24 248 56 216 88"
+          fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+        <line x1="176" y1="56" x2="248" y2="56"
+          fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+      </svg>
+      <span>Drag</span>
+    </div>
+
+    <div class="slider" style="--quantity: 8">
+
+      <div class="item" style="--position: 1">
+        <div class="banner-card">
+          <div class="front">
+            <img src="src/bg_card/mugshot.png" alt="Mugshot">
+          </div>
+          <div class="back">
+            <img src="src/bg_card/bg_card.png" alt="Back side">
+          </div>
+        </div>
+      </div>
+
+      <div class="item" style="--position: 2">
+        <div class="banner-card">
+          <div class="front">
+            <h1>Elevator Pitch</h1>
+            <p>
+              I aspire to pursue a career in computer science, with an interest in research, design, and realisation 
+              of both front-end and backend software development. I aim to continuously deepen my knowledge in developing various 
+              programming languages and frameworks, and to apply my programming experience to the management and practical execution 
+              of such projects. I am committed to continuous learning and improvement.
+            </p>
+          </div>
+          <div class="back">
+            <img src="src/bg_card/bg_card.png" alt="Back side">
+          </div>
+        </div>
+      </div>
+
+      <div class="item" style="--position: 3">
+        <div class="banner-card">
+          <div class="content-wrapper front">
+            <h1>Experience</h1>
+            <p>
+              I’m a software developer and designer with experience creating interactive tools 
+              and immersive environments. I designed and built a VR dashboard for the NOLAI 
+              project, helping researchers monitor and analyze educational VR sessions for children, 
+              with a focus on usability, privacy, and data visualization. I also contributed to the 
+              Limescoop VR installation, optimizing Unity environments, animating 3D models, and 
+              enhancing user interaction for a public VR experience.
+            </p>
+          </div>
+          <div class="content-wrapper back">
+            <img src="src/bg_card/bg_card.png" alt="Back side">
+          </div>
+        </div>
+      </div>
+
+      <div class="item" style="--position: 4">
+        <div class="banner-card">
+          <div class="front">
+            <h1>Education</h1>
+            <p>
+              During my Bachelor of Applied Science in Computer Science at Hogeschool Leiden, I specialized in Interaction Technology. 
+              The program focused on human-centered design research and realization, and full-stack development. I participated in hands-on 
+              projects involving the design and development of different applications, combining technical skills with user experience insights.
+            </p>
+          </div>
+          <div class="back">
+            <img src="src/bg_card/bg_card.png" alt="Back side">
+          </div>
+        </div>
+      </div>
+
+      <div class="item" style="--position: 5">
+        <div class="banner-card">
+          <div class="front">
+            <h1>Skills</h1>
+            <p>
+              - Unity/C# <br>
+              - Python <br>
+              - Laravel <br>
+              - ReactJS <br>
+              - HTML/CSS/JS <br>
+              - Human Computer Interaction Research <br>
+            </p>
+          </div>
+          <div class="back">
+            <img src="src/bg_card/bg_card.png" alt="Back side">
+          </div>
+        </div>
+      </div>
+
+      <div class="item" style="--position: 6">
+        <div class="banner-card">
+          <div class="front">
+            <h1>Core Qualities</h1>
+            <p>
+              - Flexible <br>
+              - Team player <br>
+              - Honest <br>
+              - Reliable <br>
+              - Eager to Learn <br>
+            </p>
+          </div>
+          <div class="back">
+            <img src="src/bg_card/bg_card.png" alt="Back side">
+          </div>
+        </div>
+      </div>
+
+      <div class="item" style="--position: 7">
+        <div class="banner-card">
+          <div class="front">
+            <h1>Interests</h1>
+            <p>
+              - Football <br>
+              - Gaming <br>
+              - Boardgames <br>
+              - Listening to music <br>
+              - Developing personal projects <br>
+              - Collecting cards <br>
+            </p>
+          </div>
+          <div class="back">
+            <img src="src/bg_card/bg_card.png" alt="Back side">
+          </div>
+        </div>
+      </div>
+
+      <div class="item" style="--position: 8">
+        <div class="banner-card">
+          <div class="front">
+            <h1>Fun facts</h1>
+            <p>
+              - I built my own interactive board game from scratch <br>
+              - Before diving into computer science, I studied clinical chemistry <br>
+              - I spent a year working before starting my bachelor’s degree <br>
+              - I played football for 16 years, starting at age 4 and representing 4 different clubs <br>
+              - I go on vacation every year, but I’ve never traveled outside Europe <br>
+              - Hip-hop is my favorite music genre, and I listen to it every chance I get <br>
+              - FromSoftware makes the best games—and yes, you can quote me on that <br>
+            </p>
+          </div>
+          <div class="back">
+            <img src="src/bg_card/bg_card.png" alt="Back side">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+</body>
+</html>

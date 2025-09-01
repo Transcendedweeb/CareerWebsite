@@ -48,7 +48,7 @@ p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 5;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -772,4 +772,99 @@ nav ul li a:hover {
 #toTopBtn.show {
   opacity: 1;
   visibility: visible;
+}
+
+/* About page */
+.scroll-banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  touch-action: none;
+}
+
+.scroll-banner:active {
+  cursor: grabbing;
+}
+
+.scroll-banner .slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 25%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(-5deg) rotateY(0deg);
+}
+
+.scroll-banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  color: #111;
+  transform:
+    rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(550px);
+  transform-style: preserve-3d;
+}
+
+.item .banner-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.item .front, 
+.item .back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  border: 2px solid #a8a8a8;
+}
+
+.item .front {
+  background: white;
+  color: #111;
+}
+
+.item .back {
+  background: #111;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.item .back img, .item .front img{
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item .front h1 {
+  font-size: 12px;
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+.item .front p {
+  text-align: justify;
+  font-size: 9px;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.scroll-banner .drag-hint {
+  color: #929292;
+  margin-top: 1rem;
 }
